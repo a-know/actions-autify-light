@@ -7,14 +7,9 @@ inputs:
   testplan_id:
     description: 'Autify Testplan ID'
     required: true
-  personal_token:
-    description: 'Autify Personal Access Token'
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.project_id }}
     - ${{ inputs.testplan_id }}
-  env:
-    AUTIFY_PERSONAL_TOKEN: ${{ inputs.personal_token }}
