@@ -13,5 +13,3 @@ runs:
   args:
     - ${{ inputs.project_id }}
     - ${{ inputs.testplan_id }}
-  env:
-    AUTIFY_PERSONAL_TOKEN: ${{ secrets.AUTIFY_PERSONAL_TOKEN }}
