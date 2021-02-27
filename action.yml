@@ -1,12 +1,15 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
-inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+name: 'actions-autify-light'
+description: 'Simple GitHub Actions for Autify'
+inputs:
+  project_id:
+    description: 'Autify Project ID'
+    required: true
+  testplan_id:
+    description: 'Autify Testplan ID'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.project_id }}
+    - ${{ inputs.testplan_id }}
