@@ -13,7 +13,6 @@ main() {
 
     scheduled_response=$(curl \
         -s \
-        --fail \
         -H "Authorization: Bearer ${AUTIFY_PERSONAL_TOKEN}" \
         -X POST "${AUTIFY_BASE_URL}/schedules/${AUTIFY_TESTPLAN_ID}")
     
@@ -25,7 +24,6 @@ main() {
     do
         fetch_result_response=$(curl \
             -s \
-            --fail \
             -H "Authorization: Bearer ${AUTIFY_PERSONAL_TOKEN}" \
             -X GET "${AUTIFY_BASE_URL}/projects/${AUTIFY_PROJECT_ID}/results/${result_id}")
         
