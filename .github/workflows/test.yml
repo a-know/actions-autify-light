@@ -5,8 +5,9 @@ jobs:
   running-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: With
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run
         uses: ./
         with:
           project_id: ${{ secrets.AUTIFY_PROJECT_ID }}
