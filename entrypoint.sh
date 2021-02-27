@@ -16,7 +16,7 @@ main() {
         -H "Authorization: Bearer ${AUTIFY_PERSONAL_TOKEN}" \
         -X POST "${AUTIFY_BASE_URL}/schedules/${AUTIFY_TESTPLAN_ID}")
     
-    echo "[DEBUG] Autify Schedule API response: $(echo $scheduled_response | jq)"
+    echo "[DEBUG] Autify Schedule API response: $(echo $scheduled_response)"
 
     result_id=$(echo $scheduled_response | jq ".data.id" -r)
 
