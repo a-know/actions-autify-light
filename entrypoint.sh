@@ -5,16 +5,17 @@ set -eu
 AUTIFY_BASE_URL="https://app.autify.com/api/v1"
 
 main() {
-    project_id="${1}"
-    testplan_id="${2}"
+    AUTIFY_PROJECT_ID="${1}"
+    AUTIFY_TESTPLAN_ID="${2}"
+    AUTIFY_PERSONAL_TOKEN="${3}"
 
-    echo "[DEBUG] Running with project_id:${project_id}, testplan_id:${testplan_id}"
+    echo "[DEBUG] Running with project_id:${AUTIFY_PROJECT_ID}, testplan_id:${AUTIFY_TESTPLAN_ID}"
 
     scheduled_response=$(curl \
         -s \
         --fail \
         -H "Authorization: Bearer ${AUTIFY_PERSONAL_TOKEN}" \
-        -X POST "${AUTIFY_BASE_URL}/schedules/${testplan_id}")
+        -X POST "${AUTIFY_BASE_URL}/schedules/${AUTIFY_TESTPLAN_ID}")
     
     echo "[DEBUG] Autify Schedule API response: $(echo $scheduled_response | jq)"
 
@@ -26,7 +27,7 @@ main() {
             -s \
             --fail \
             -H "Authorization: Bearer ${AUTIFY_PERSONAL_TOKEN}" \
-            -X GET "${AUTIFY_BASE_URL}/projects/${project_id}/results/${result_id}")
+            -X GET "${AUTIFY_BASE_URL}/projects/${AUTIFY_PROJECT_ID}/results/${result_id}")
         
         echo "[DEBUG] Autify Result API response: $(echo $fetch_result_response | jq)"
 
