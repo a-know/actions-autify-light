@@ -12,4 +12,3 @@ jobs:
         with:
           project_id: 391
           testplan_id: 32135
-          personal_token: ${{ secrets.AUTIFY_PERSONAL_TOKEN }}

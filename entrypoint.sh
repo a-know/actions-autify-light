@@ -7,7 +7,6 @@ AUTIFY_BASE_URL="https://app.autify.com/api/v1"
 main() {
     AUTIFY_PROJECT_ID="${1}"
     AUTIFY_TESTPLAN_ID="${2}"
-    AUTIFY_PERSONAL_TOKEN="${3}"
 
     echo "[DEBUG] Running with project_id:${AUTIFY_PROJECT_ID}, testplan_id:${AUTIFY_TESTPLAN_ID}"
 
